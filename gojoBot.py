@@ -137,7 +137,7 @@ def search_and_reply(quote):
 
 # tweets randomly chosen quote of the day
 def tweet(quote):
-    api.update_status('Gojo Senseii\'s Quote of the Day:\n' + quote)
+    api.update_status('Gojo Senseii\'s Quote of the Week:\n' + quote)
 
 # replies with dancing gojo GIF if mentioned
 def gojo_dance():
