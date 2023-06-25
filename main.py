@@ -22,9 +22,9 @@ TWEET_QUOTES = 'tweet_quotes.txt'
 ARCHIVE = 'quote_archive.txt'
 DANCE_GIF = 'gojo_dance.gif'
 NUM_TWEETS = 5  # Replies to 5 tweets for now
-CHARACTER_LIMIT = 221  # Adjusted from 280 with the addition of message: "Bestowing Gojo's.... You're welcome!" (59 chars)
+CHARACTER_LIMIT = 221
 
-recentQuotes = []  # Keeps track of recent quotes used for replies
+recentQuotes = [] 
 
 
 # Read quote file and return a list of quotes
@@ -36,7 +36,7 @@ def read_quote_file(filename):
             if len(line) <= CHARACTER_LIMIT:
                 quote_list.append(line)
             else:
-                print(line)  # Print quotes that are too long
+                print(line)
     quote_list.remove('')
     return quote_list
 
@@ -57,9 +57,6 @@ def get_random_quote(quote_list, isTweet):
     used_quotes(quote, quote_list, isTweet)
     return quote
 
-
-# If a reply, add the retrieved quote to the recent quotes list.
-# If a tweet, add the retrieved quote to the archive file and remove it from the tweet quotes file.
 def used_quotes(quote, quote_list, isTweet):
     if isTweet:
         # Add used quote to the quote archive file
@@ -91,7 +88,6 @@ def store_last_seen_id(last_seen_id, file_name):
         f.write(str(last_seen_id))
 
 
-# Search for recent tweets with the hashtag 'GojoSatoru' or 'gojosatoru' and reply to each tweet
 def search_and_reply(quote):
     last_seen_id = retrieve_last_seen_id(FILE_NAME)
     tweets = tweepy.Cursor(api.search_tweets, q='#GojoSatoru -filter:retweets OR #gojosatoru -filter:retweets',
