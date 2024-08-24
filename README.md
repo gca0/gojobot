@@ -1,3 +1,5 @@
+*2024 Update: Due to recent X's API access changes, tweets lookups are no longer available under the Free plan. The bot will now only tweet random quotes on its own :( 
+
 This Twitter bot has three functions: 
 1. Searches for five recent tweets that include '#GojoSatoru' or '#gojosatoru', and replies to each 
    tweet with a randomly chosen quote from 'reply_quotes.txt.' This is set to execute daily at 12:00:00PM.
